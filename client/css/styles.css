@@ -2,3 +2,23 @@ html {
   background: #ff0e65;
   overflow: hidden;
 }
+#questions h1 {
+  text-align: center;
+}
+#questions .image img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#answers ul {
+  margin: 10px;
+}
+#answers li {
+  list-style: none;
+  margin-bottom: 20px;
+}
+#answers img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

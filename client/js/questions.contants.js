@@ -6,10 +6,22 @@
 				"Question" : "Match the colour of this",
 				"Image" : "q1.png",
 				"Answers": {
-					1: "q1a1.png",
-					2: "q1a2.png",
-					3: "q1a3.png",
-					4: "q1a4.png"
+					1: {
+						"id": 1,
+						"src": "q1a1.png"
+					},
+					2: {
+						"id": 2,
+						"src": "q1a2.png"
+					},
+					3: {
+						"id": 3,
+						"src": "q1a3.png"
+					},
+					4: {
+						"id": 4,
+						"src": "q1a4.png"
+					},
 				},
 				"CorrectAnswer": 1
 			},
@@ -17,10 +29,22 @@
 				"Question" : "What is the next value in the sequence?",
 				"Image" : "q2.png",
 				"Answers": {
-					1: "q2a1.png",
-					2: "q2a2.png",
-					3: "q2a3.png",
-					4: "q2a4.png"
+					1: {
+						"id": 1,
+						"src": "q2a1.png"
+					},
+					2: {
+						"id": 2,
+						"src": "q2a2.png"
+					},
+					3: {
+						"id": 3,
+						"src": "q2a3.png"
+					},
+					4: {
+						"id": 4,
+						"src": "q2a4.png"
+					},
 				},
 				"CorrectAnswer": 4
 			}

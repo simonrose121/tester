@@ -14,6 +14,7 @@
 
 		vm.displayNextQuestion = displayNextQuestion;
 		vm.loadQuestionIds = loadQuestionIds;
+		vm.selectAnswer = selectAnswer;
 
 		// run methods on load
 		vm.loadQuestionIds();
@@ -31,6 +32,18 @@
 			});
 
 			//shuffle(vm.questionIds);
+		}
+
+		function selectAnswer(answer) {
+			console.log(vm.currentQuestion.CorrectAnswer);
+			console.log(answer.id);
+			if (answer.id === vm.currentQuestion.CorrectAnswer) {
+				console.log('right');
+			} else {
+				console.log('wrong');
+			}
+
+			vm.displayNextQuestion();
 		}
 
 		/* private methods */
