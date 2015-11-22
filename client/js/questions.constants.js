@@ -2,7 +2,7 @@
 	angular
 		.module('tester')
 		.constant('questions', {
-			"q1": {
+			"1": {
 				"Question" : "Match the colour of this",
 				"Image" : "q1.png",
 				"Answers": {
@@ -25,7 +25,7 @@
 				},
 				"CorrectAnswer": 1
 			},
-			"q2": {
+			"2": {
 				"Question" : "What is the next value in the sequence?",
 				"Image" : "q2.png",
 				"Answers": {

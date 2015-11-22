@@ -1,8 +1,12 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var DocumentDBClient = require('documentdb').DocumentClient;
+
 var app = express();
 
-var logController = require('./server/log.controller.js');
+var config = require('./config');
+var LogDAO = require('./server/log.dao.js');
+var LogController = require('./server/log.controller.js');
 
 var port = process.env.PORT || 8078;
 
@@ -22,8 +26,16 @@ app.use('/css', express.static(__dirname + '/client/css'));
 app.use('/img', express.static(__dirname + '/client/img'));
 app.use('/js', express.static(__dirname + '/client/js'));
 
+// database
+var docDbClient = new DocumentDBClient(config.host, {
+    masterKey: config.authKey
+});
+var logDAO = new LogDAO(docDbClient, config.databaseId, config.collectionId);
+var logController = new LogController(logDAO);
+logDAO.init();
+
 // api routes
-app.post('/answer/', logController.post);
+app.post('/answer/', logController.addLog.bind(logController));
 
 app.listen(port);
 

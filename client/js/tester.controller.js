@@ -23,7 +23,7 @@
 
 		function displayNextQuestion() {
 			// get next question in array
-			vm.currentQuestion = questions[vm.questionIds[vm.index++]];
+			vm.currentQuestion = questions[vm.questionIds[vm.index]];
 		}
 
 		function loadQuestionIds() {
@@ -32,11 +32,14 @@
 				vm.questionIds.push(obj);
 			});
 
-			//shuffle(vm.questionIds);
+			shuffle(vm.questionIds);
 		}
 
 		function selectAnswer(answer) {
 			var correct = false;
+
+			console.log(vm.questionIds);
+			console.log(vm.index);
 
 			if (answer.id === vm.currentQuestion.CorrectAnswer) {
 				correct = true;
@@ -44,6 +47,7 @@
 
 			logService.postAnswer(vm.userId, vm.questionIds[vm.index], answer.id, correct);
 
+			vm.index++;
 			vm.displayNextQuestion();
 		}
 
