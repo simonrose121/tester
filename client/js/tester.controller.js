@@ -30,7 +30,7 @@
 				vm.questionIds.push(obj);
 			});
 
-			shuffle(vm.questionIds);
+			//shuffle(vm.questionIds);
 		}
 
 		/* private methods */

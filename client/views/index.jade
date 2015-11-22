@@ -7,3 +7,9 @@ html(lang='en' ng-app='tester')
         #nav.col-md-12
         #questions.col-md-12
             h1 {{ vm.currentQuestion.Question }}
+            .image
+                img(ng-src='img/{{vm.currentQuestion.Image}}')
+        #answers.col-md-12
+            ul(ng-repeat='answer in vm.currentQuestion.Answers')
+                img(ng-src='img/{{answer}}')
+            
