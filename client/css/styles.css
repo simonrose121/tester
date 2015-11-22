@@ -1,14 +1,20 @@
 html {
-  background: #ff0e65;
   overflow: hidden;
 }
-#questions h1 {
+body {
+  background: #ff0e65;
+}
+#question h1 {
   text-align: center;
 }
-#questions .image img {
+#question .image img {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+#answers {
+  margin-left: -40px;
+  margin-top: 50px;
 }
 #answers ul {
   margin: 10px;

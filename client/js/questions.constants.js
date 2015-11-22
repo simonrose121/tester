@@ -3,7 +3,7 @@
 		.module('tester')
 		.constant('questions', {
 			"1": {
-				"Question" : "Match the colour of this",
+				"Question" : "Match one of the shapes with the shape below",
 				"Image" : "q1.png",
 				"Answers": {
 					1: {
@@ -23,30 +23,30 @@
 						"src": "q1a4.png"
 					},
 				},
-				"CorrectAnswer": 1
+				"CorrectAnswer": 3
 			},
-			"2": {
-				"Question" : "What is the next value in the sequence?",
-				"Image" : "q2.png",
-				"Answers": {
-					1: {
-						"id": 1,
-						"src": "q2a1.png"
-					},
-					2: {
-						"id": 2,
-						"src": "q2a2.png"
-					},
-					3: {
-						"id": 3,
-						"src": "q2a3.png"
-					},
-					4: {
-						"id": 4,
-						"src": "q2a4.png"
-					},
-				},
-				"CorrectAnswer": 4
-			}
+			// "2": {
+			// 	"Question" : "What is the next value in the sequence?",
+			// 	"Image" : "q2.png",
+			// 	"Answers": {
+			// 		1: {
+			// 			"id": 1,
+			// 			"src": "q2a1.png"
+			// 		},
+			// 		2: {
+			// 			"id": 2,
+			// 			"src": "q2a2.png"
+			// 		},
+			// 		3: {
+			// 			"id": 3,
+			// 			"src": "q2a3.png"
+			// 		},
+			// 		4: {
+			// 			"id": 4,
+			// 			"src": "q2a4.png"
+			// 		},
+			// 	},
+			// 	"CorrectAnswer": 4
+			// }
 		});
 })();

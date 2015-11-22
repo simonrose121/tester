@@ -14,15 +14,17 @@ LogController.prototype = {
 			correct: req.body.correct
 		};
 
-        self.logDao.addItem(entry, function (err) {
-            if (err) {
-                throw (err);
-            }
+		console.log(entry);
 
-			console.log(entry);
-
-            return entry;
-        });
+        // self.logDao.addItem(entry, function (err) {
+        //     if (err) {
+        //         throw (err);
+        //     }
+		//
+		// 	console.log(entry);
+		//
+        //     return entry;
+        // });
     },
 };
 

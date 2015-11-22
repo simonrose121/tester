@@ -4,16 +4,18 @@ html(lang='en' ng-app='tester')
         title="tester"
         include header.jade
     body(ng-controller='Tester as vm')
-        #nav.col-md-12
-        #questions.col-md-12
+        .row
             .container
-                h1 {{ vm.currentQuestion.Question }}
-                .image
-                    img(ng-src='img/{{vm.currentQuestion.Image}}')
-        #answers.col-md-12
+                .col-md-12
+                    #question
+                        h1 {{ vm.currentQuestion.Question }}
+                        .image
+                            img(ng-src='img/{{vm.currentQuestion.Image}}')
+        .row
             .container
-                ul(ng-repeat='answer in vm.currentQuestion.Answers')
-                    .col-md-6
-                        li
-                            img(ng-src='img/{{answer.src}}' ng-click='vm.selectAnswer(answer)')
-            
+                .col-md-12
+                    #answers
+                        ul(ng-repeat='answer in vm.currentQuestion.Answers')
+                            .col-md-6
+                                li
+                                    img(ng-src='img/{{answer.src}}' ng-click='vm.selectAnswer(answer)')
