@@ -4,3 +4,6 @@ html(lang='en' ng-app='tester')
         title="tester"
         include header.jade
     body(ng-controller='Tester as vm')
+        #nav.col-md-12
+        #questions.col-md-12
+            h1 {{ vm.currentQuestion.Question }}
