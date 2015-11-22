@@ -3,14 +3,15 @@
 		.module('tester')
 		.controller('Tester', Tester);
 
-	Tester.$Inject = ['questions'];
+	Tester.$Inject = ['logService', 'questions'];
 
-	function Tester(questions) {
+	function Tester(logService, questions) {
 		var vm = this;
 
 		vm.currentQuestion = null;
 		vm.index = 0;
 		vm.questionIds = [];
+		vm.userId = 0;
 
 		vm.displayNextQuestion = displayNextQuestion;
 		vm.loadQuestionIds = loadQuestionIds;
@@ -35,13 +36,13 @@
 		}
 
 		function selectAnswer(answer) {
-			console.log(vm.currentQuestion.CorrectAnswer);
-			console.log(answer.id);
+			var correct = false;
+
 			if (answer.id === vm.currentQuestion.CorrectAnswer) {
-				console.log('right');
-			} else {
-				console.log('wrong');
+				correct = true;
 			}
+
+			logService.postAnswer(vm.userId, vm.questionIds[vm.index], answer.id, correct);
 
 			vm.displayNextQuestion();
 		}
