@@ -15,9 +15,10 @@ app.get('/', function(req,res) {
 });
 
 // static files
-app.use('/libs', express.static(__dirname + '/client/assets/libs'));
-app.use('/css', express.static(__dirname + '/client/assets/css'));
-app.use('/img', express.static(__dirname + '/client/assets/img'));
+app.use('/libs', express.static(__dirname + '/client/libs'));
+app.use('/css', express.static(__dirname + '/client/css'));
+app.use('/img', express.static(__dirname + '/client/img'));
+app.use('/js', express.static(__dirname + '/client/js'));
 
 // api routes
 

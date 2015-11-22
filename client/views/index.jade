@@ -3,5 +3,6 @@ html(lang='en' ng-app='tester')
     head
         title="tester"
         include header.jade
-    body
+    body(ng-controller='Tester as vm')
         .container
+            p {{vm.foo}}
