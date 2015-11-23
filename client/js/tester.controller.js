@@ -38,6 +38,11 @@
 			logService.postAnswer(vm.userId, vm.currentQuestion.Id, answer.id, correct);
 
 			vm.index++;
+			//TODO: REMOVE
+			if (vm.index == 2) {
+				vm.index = 0;
+			}
+
 			vm.displayNextQuestion();
 		}
 
