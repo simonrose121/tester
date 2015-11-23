@@ -1,8 +1,9 @@
 (function() {
 	angular
 		.module('tester')
-		.constant('questions', {
-			"1": {
+		.constant('questions', [
+			{
+				"Id": 1,
 				"Question" : "Match one of the shapes below with this shape",
 				"Image" : "q1.png",
 				"Answers": [
@@ -48,5 +49,5 @@
 			// 	},
 			// 	"CorrectAnswer": 4
 			// }
-		});
+		]);
 })();

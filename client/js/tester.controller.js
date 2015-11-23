@@ -9,12 +9,10 @@
 		var vm = this;
 
 		vm.currentQuestion = null;
-		vm.index = 1;
-		vm.answerIds = [];
+		vm.index = 0;
 		vm.userId = 0;
 
 		vm.displayNextQuestion = displayNextQuestion;
-		vm.loadAnswerIds = loadAnswerIds;
 		vm.selectAnswer = selectAnswer;
 
 		// run methods on load
@@ -27,15 +25,6 @@
 			shuffle(vm.currentQuestion.Answers);
 		}
 
-		function loadAnswerIds() {
-			// sort answers randomly and maintain this order
-			$.each(vm.currentQuestion.Answers, function(obj) {
-				vm.answerIds.push(obj);
-			});
-
-			shuffle(vm.answerIds);
-		}
-
 		function selectAnswer(answer) {
 			var correct = false;
 
@@ -46,7 +35,7 @@
 				correct = true;
 			}
 
-			logService.postAnswer(vm.userId, vm.questionIds[vm.index], answer.id, correct);
+			logService.postAnswer(vm.userId, vm.currentQuestion.Id, answer.id, correct);
 
 			vm.index++;
 			vm.displayNextQuestion();
