@@ -2,19 +2,21 @@ html {
   overflow: hidden;
 }
 body {
-  background: #ff0e65;
+  background: #fff;
 }
 #question h1 {
   text-align: center;
 }
 #question .image img {
+  margin-top: 50px;
   display: block;
   margin-left: auto;
   margin-right: auto;
+  border: solid thin #000;
 }
 #answers {
   margin-left: -40px;
-  margin-top: 50px;
+  margin-top: 80px;
 }
 #answers ul {
   margin: 10px;
@@ -27,4 +29,6 @@ body {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  cursor: pointer;
+  border: solid thin #000;
 }

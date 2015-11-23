@@ -3,26 +3,26 @@
 		.module('tester')
 		.constant('questions', {
 			"1": {
-				"Question" : "Match one of the shapes with the shape below",
+				"Question" : "Match one of the shapes below with this shape",
 				"Image" : "q1.png",
-				"Answers": {
-					1: {
+				"Answers": [
+					{
 						"id": 1,
 						"src": "q1a1.png"
 					},
-					2: {
+					{
 						"id": 2,
 						"src": "q1a2.png"
 					},
-					3: {
+					{
 						"id": 3,
 						"src": "q1a3.png"
 					},
-					4: {
+					{
 						"id": 4,
 						"src": "q1a4.png"
 					},
-				},
+				],
 				"CorrectAnswer": 3
 			},
 			// "2": {
