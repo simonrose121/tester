@@ -12,6 +12,7 @@
 		vm.index = 0;
 		vm.userId = 1;
 		vm.userIdField = null;
+		vm.finished = false;
 
 		vm.displayNextQuestion = displayNextQuestion;
 		vm.register = register;
@@ -60,8 +61,10 @@
 		function startTimer() {
 			//300000 milliseconds
 			timerService.count(300000, function() {
-				console.log('time up');
+				$('.finished').show();
+				$('.test').hide();
 			});
+
 		}
 
 		/* private methods */

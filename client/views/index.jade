@@ -5,23 +5,29 @@ html(lang='en' ng-app='tester')
         include header.jade
     body(ng-controller='Tester as vm')
         .content(ng-if='vm.userId')
-            .row#question
-                .id
-                    h3(ng-bind='vm.userId')
-                .container
-                    .col-md-8.col-md-offset-2
-                        h1 {{ vm.currentQuestion.Question }}
-                        .image
-                            img(ng-src='img/{{vm.currentQuestion.Image}}')
-            .row#answers
-                .container
-                    .col-md-8.col-md-offset-2
-                        ul(ng-repeat='answer in vm.currentQuestion.Answers')
-                            .col-md-6
-                                li
-                                    img(class='answer' 
-                                        ng-src='img/{{answer.src}}' 
-                                        ng-click='vm.selectAnswer(answer)')
+            .finished(style='display: none;')
+                .row#finished
+                    .container
+                        .col-md-4.col-md-offset-4
+                            h1 Time is up, well done!
+            .test
+                .row#question
+                    .id
+                        h3(ng-bind='vm.userId')
+                    .container
+                        .col-md-8.col-md-offset-2
+                            h1 {{ vm.currentQuestion.Question }}
+                            .image
+                                img(ng-src='img/{{vm.currentQuestion.Image}}')
+                .row#answers
+                    .container
+                        .col-md-8.col-md-offset-2
+                            ul(ng-repeat='answer in vm.currentQuestion.Answers')
+                                .col-md-6
+                                    li
+                                        img(class='answer' 
+                                            ng-src='img/{{answer.src}}' 
+                                            ng-click='vm.selectAnswer(answer)')
         .content(ng-if='!vm.userId')
             .row#register
                 .container
