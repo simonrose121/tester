@@ -15,7 +15,7 @@
 		vm.answers = [];
 		vm.question = "";
 		vm.index = 0;
-		vm.userId = 1;
+		vm.userId = null;
 		vm.userIdField = null;
 		vm.finished = null;
 		vm.timeLimit = 300000; // 5 minutes
