@@ -5,12 +5,23 @@ body {
   background: #0097A7;
   font-family: 'Roboto';
 }
+#ngProgress {
+  position: absolute;
+  top: 0;
+}
 #register {
   margin-top: 50px;
 }
 #finished {
   color: #FFF;
   text-align: center;
+}
+#start {
+  position: fixed;
+  /* or absolute */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 #question {
   background: #00BCD4;

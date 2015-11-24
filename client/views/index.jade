@@ -4,7 +4,11 @@ html(lang='en' ng-app='tester')
         title="tester"
         include header.jade
     body(ng-controller='Tester as vm')
-        .content(ng-if='vm.userId')
+        .content(ng-if='vm.finished == null && vm.userId')
+            #start
+                form(name='input' ng-submit='vm.start()')
+                    input(type='submit' class="btn btn-default btn-lg" value='Start' id='start')
+        .content(ng-if='vm.finished == false && vm.userId')
             .finished(style='display: none;')
                 .row#finished
                     .container
@@ -35,6 +39,6 @@ html(lang='en' ng-app='tester')
                         form(name='input' ng-submit='vm.register()')
                             fieldset(class='form-group')
                                 input(type='text' class="form-control" ng-model='vm.userIdField' placeholder='UserId')
-                            input(type='submit' class="btn btn-primary" value='Submit' id='submit')
+                            input(type='submit' class="btn btn-default" value='Submit' id='submit')
         
                                     
