@@ -3,9 +3,9 @@
 		.module('tester')
 		.controller('Tester', Tester);
 
-	Tester.$Inject = ['logService', 'timerService', 'questions'];
+	Tester.$Inject = ['$sanitize', 'logService', 'timerService', 'questions'];
 
-	function Tester(logService, timerService, questions) {
+	function Tester($sanitize, logService, timerService, questions) {
 		var vm = this;
 
 		vm.currentQuestion = null;
@@ -30,7 +30,10 @@
 		}
 
 		function register() {
-			vm.userId = vm.userIdField;
+			if (isNormalInteger(vm.userIdField)) {
+				var sanitized = $sanitize(vm.userIdField);
+				vm.userId = sanitized;
+			}
 		}
 
 		function selectAnswer(answer) {
@@ -62,6 +65,11 @@
 		}
 
 		/* private methods */
+		function isNormalInteger(str) {
+		    var n = ~~Number(str);
+		    return String(n) === str && n >= 0;
+		}
+
 		function shuffle(array) {
 			var currentIndex = array.length, temporaryValue, randomIndex;
 
