@@ -4,16 +4,31 @@ html(lang='en' ng-app='tester')
         title="tester"
         include header.jade
     body(ng-controller='Tester as vm')
-        .row#question
-            .container
-                .col-md-12
-                    h1 {{ vm.currentQuestion.Question }}
-                    .image
-                        img(ng-src='img/{{vm.currentQuestion.Image}}')
-        .row#answers
-            .container
-                .col-md-12
-                    ul(ng-repeat='answer in vm.currentQuestion.Answers')
-                        .col-md-6
-                            li
-                                img(class='answer' ng-src='img/{{answer.src}}' ng-click='vm.selectAnswer(answer)')
+        .content(ng-if='vm.userId')
+            .row#question
+                .id
+                    h3(ng-bind='vm.userId')
+                .container
+                    .col-md-12
+                        h1 {{ vm.currentQuestion.Question }}
+                        .image
+                            img(ng-src='img/{{vm.currentQuestion.Image}}')
+            .row#answers
+                .container
+                    .col-md-12
+                        ul(ng-repeat='answer in vm.currentQuestion.Answers')
+                            .col-md-6
+                                li
+                                    img(class='answer' 
+                                        ng-src='img/{{answer.src}}' 
+                                        ng-click='vm.selectAnswer(answer)')
+        .content(ng-if='!vm.userId')
+            .row#register
+                .container
+                    .col-md-2.col-md-offset-5
+                        form(name='input' ng-submit='vm.register()')
+                            fieldset(class='form-group')
+                                input(type='text' class="form-control" ng-model='vm.userIdField' placeholder='UserId')
+                            input(type='submit' class="btn btn-primary" value='Submit' id='submit')
+        
+                                    

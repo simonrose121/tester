@@ -10,9 +10,11 @@
 
 		vm.currentQuestion = null;
 		vm.index = 0;
-		vm.userId = 0;
+		vm.userId = null;
+		vm.userIdField = null;
 
 		vm.displayNextQuestion = displayNextQuestion;
+		vm.register = register;
 		vm.selectAnswer = selectAnswer;
 		vm.startTimer = startTimer;
 
@@ -25,6 +27,10 @@
 			vm.currentQuestion = questions[vm.index];
 			//vm.loadAnswerIds();
 			shuffle(vm.currentQuestion.Answers);
+		}
+
+		function register() {
+			vm.userId = vm.userIdField;
 		}
 
 		function selectAnswer(answer) {
