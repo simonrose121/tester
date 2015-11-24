@@ -23,6 +23,8 @@
     "jquery": "~2.1.4",
     "bootstrap": "~3.3.5",
     "normalize-css": "~3.0.3",
-    "angular-route": "~1.4.8"
+    "angular-route": "~1.4.8",
+    "angular-sanitize": "~1.4.8",
+    "ngprogress": "~1.1.2"
   }
 }
