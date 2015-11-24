@@ -1,4 +1,5 @@
 var DocumentDBClient = require('documentdb').DocumentClient;
+var config = require('../config.js');
 
 function LogController(logDao) {
   	this.logDao = logDao;
@@ -16,15 +17,17 @@ LogController.prototype = {
 
 		console.log(entry);
 
-        // self.logDao.addItem(entry, function (err) {
-        //     if (err) {
-        //         throw (err);
-        //     }
-		//
-		// 	console.log(entry);
-		//
-        //     return entry;
-        // });
+		if (config.store) {
+			self.logDao.addItem(entry, function (err) {
+				if (err) {
+					throw (err);
+				}
+
+				console.log(entry);
+
+				return entry;
+			});
+		}
     },
 };
 

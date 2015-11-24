@@ -39,7 +39,7 @@
 
 			vm.index++;
 			//TODO: REMOVE
-			if (vm.index == 2) {
+			if (vm.index == 6) {
 				vm.index = 0;
 			}
 
