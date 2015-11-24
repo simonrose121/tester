@@ -1,0 +1,30 @@
+{
+  "name": "tester",
+  "version": "0.1.0",
+  "description": "An application to test problem solving in KS1 children.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://simonrose121@github.com/simonrose121/tester.git"
+  },
+  "author": "Simon Rose",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/simonrose121/tester/issues"
+  },
+  "homepage": "https://github.com/simonrose121/tester#readme",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "documentdb": "^1.4.0",
+    "express": "^4.13.3",
+    "jade": "^1.11.0"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-less": "^1.1.0",
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}
