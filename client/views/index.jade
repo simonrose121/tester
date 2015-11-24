@@ -20,9 +20,9 @@ html(lang='en' ng-app='tester')
                         h3(ng-bind='vm.userId')
                     .container
                         .col-md-8.col-md-offset-2
-                            h1 {{ vm.currentQuestion.Question }}
+                            h1 {{ vm.question }}
                             .image
-                                img(ng-src='img/{{vm.currentQuestion.Image}}')
+                                img(ng-src='img/q{{vm.currentQuestion.Id}}.png')
                 .row#answers
                     .container
                         .col-md-8.col-md-offset-2
