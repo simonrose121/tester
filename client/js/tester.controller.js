@@ -3,9 +3,9 @@
 		.module('tester')
 		.controller('Tester', Tester);
 
-	Tester.$Inject = ['logService', 'questions'];
+	Tester.$Inject = ['logService', 'timerService', 'questions'];
 
-	function Tester(logService, questions) {
+	function Tester(logService, timerService, questions) {
 		var vm = this;
 
 		vm.currentQuestion = null;
@@ -14,9 +14,11 @@
 
 		vm.displayNextQuestion = displayNextQuestion;
 		vm.selectAnswer = selectAnswer;
+		vm.startTimer = startTimer;
 
 		// run methods on load
 		vm.displayNextQuestion();
+		vm.startTimer();
 
 		function displayNextQuestion() {
 			// get next question in array
@@ -44,6 +46,13 @@
 			}
 
 			vm.displayNextQuestion();
+		}
+
+		function startTimer() {
+			//300000 milliseconds
+			timerService.count(300000, function() {
+				console.log('time up');
+			});
 		}
 
 		/* private methods */
