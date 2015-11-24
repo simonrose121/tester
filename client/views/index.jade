@@ -9,13 +9,13 @@ html(lang='en' ng-app='tester')
                 .id
                     h3(ng-bind='vm.userId')
                 .container
-                    .col-md-12
+                    .col-md-8.col-md-offset-2
                         h1 {{ vm.currentQuestion.Question }}
                         .image
                             img(ng-src='img/{{vm.currentQuestion.Image}}')
             .row#answers
                 .container
-                    .col-md-12
+                    .col-md-8.col-md-offset-2
                         ul(ng-repeat='answer in vm.currentQuestion.Answers')
                             .col-md-6
                                 li

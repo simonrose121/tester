@@ -10,7 +10,7 @@
 
 		vm.currentQuestion = null;
 		vm.index = 0;
-		vm.userId = null;
+		vm.userId = 1;
 		vm.userIdField = null;
 
 		vm.displayNextQuestion = displayNextQuestion;
