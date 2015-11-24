@@ -26,11 +26,11 @@ html(lang='en' ng-app='tester')
                 .row#answers
                     .container
                         .col-md-8.col-md-offset-2
-                            ul(ng-repeat='answer in vm.currentQuestion.Answers')
+                            ul(ng-repeat='answer in vm.answers')
                                 .col-md-6
                                     li
                                         img(class='answer' 
-                                            ng-src='img/{{answer.src}}' 
+                                            ng-src='img/q{{vm.currentQuestion.Id}}a{{answer}}.png' 
                                             ng-click='vm.selectAnswer(answer)')
         .content(ng-if='!vm.userId')
             .row#register

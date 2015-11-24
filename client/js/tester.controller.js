@@ -12,6 +12,7 @@
 		var vm = this;
 
 		vm.currentQuestion = null;
+		vm.answers = [];
 		vm.index = 0;
 		vm.userId = 1;
 		vm.userIdField = null;
@@ -29,8 +30,13 @@
 		function displayNextQuestion() {
 			// get next question in array
 			vm.currentQuestion = questions[vm.index];
-			//vm.loadAnswerIds();
-			shuffle(vm.currentQuestion.Answers);
+
+			for (var i = 1; i <= vm.currentQuestion.Answers; i++) {
+				vm.answers.push(i);
+			}
+
+			shuffle(vm.answers);
+			console.log(vm.answers);
 		}
 
 		function progressBar() {
@@ -52,11 +58,11 @@
 			console.log(vm.questionIds);
 			console.log(vm.index);
 
-			if (answer.id === vm.currentQuestion.CorrectAnswer) {
+			if (answer === vm.currentQuestion.CorrectAnswer) {
 				correct = true;
 			}
 
-			logService.postAnswer(vm.userId, vm.currentQuestion.Id, answer.id, correct);
+			logService.postAnswer(vm.userId, vm.currentQuestion.Id, answer, correct);
 
 			vm.index++;
 			//TODO: REMOVE
