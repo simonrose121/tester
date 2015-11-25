@@ -11,16 +11,20 @@
 
 		var vm = this;
 
-		vm.currentQuestion = null;
+		/* variables available to view */
 		vm.answers = [];
-		vm.question = "";
+		vm.currentQuestion = null;
+		vm.finished = null;
 		vm.index = 0;
+		vm.limit = 31;
+		vm.progressBar = null;
+		vm.question = "";
+		vm.timeLimit = 300000; // 5 minutes
 		vm.userId = null;
 		vm.userIdField = null;
-		vm.finished = null;
-		vm.timeLimit = 300000; // 5 minutes
-		vm.progressBar = null;
 
+		/* public methods */
+		vm.displayFinishedMessage = displayFinishedMessage;
 		vm.displayNextQuestion = displayNextQuestion;
 		vm.progressBar = progressBar;
 		vm.register = register;
@@ -39,9 +43,20 @@
 				vm.answers.push(i);
 			}
 
+			if (vm.currentQuestion.Type == "odd") {
+				// push 2 more of the wrong answer
+				vm.answers.push(2);
+				vm.answers.push(2);
+			}
+
 			shuffle(vm.answers);
 
 			vm.question = questions.types[vm.currentQuestion.Type];
+		}
+
+		function displayFinishedMessage() {
+			$('.finished').show();
+			$('.test').hide();
 		}
 
 		function progressBar() {
@@ -60,9 +75,6 @@
 		function selectAnswer(answer) {
 			var correct = false;
 
-			console.log(vm.questionIds);
-			console.log(vm.index);
-
 			if (answer === vm.currentQuestion.CorrectAnswer) {
 				correct = true;
 			}
@@ -71,8 +83,8 @@
 
 			vm.index++;
 
-			if (vm.index == 7) {
-				vm.index = 0;
+			if (vm.index == vm.limit) {
+				vm.displayFinishedMessage();
 			}
 
 			vm.displayNextQuestion();
@@ -83,12 +95,15 @@
 			var percentage = 100;
 
 			timerService.interval(100, function() {
+				$('body').bind('beforeunload',function(){
+					clearInterval(this);
+				});
+
 				value += 100;
 
 				if (value == vm.timeLimit) {
 					clearInterval(this);
-					$('.finished').show();
-					$('.test').hide();
+					vm.displayFinishedMessage();
 					vm.progressBar.complete();
 					vm.progressBar.reset();
 				} else {
