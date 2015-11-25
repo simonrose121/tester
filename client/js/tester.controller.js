@@ -66,7 +66,7 @@
 				correct = true;
 			}
 
-			logService.postAnswer(vm.userId, vm.currentQuestion.Id, answer, correct);
+			//logService.postAnswer(vm.userId, vm.currentQuestion.Id, answer, correct);
 
 			vm.index++;
 
