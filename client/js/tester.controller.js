@@ -60,7 +60,6 @@
 		function selectAnswer(answer) {
 			var correct = false;
 
-			console.log(vm.questionIds);
 			console.log(vm.index);
 
 			if (answer === vm.currentQuestion.CorrectAnswer) {
@@ -71,8 +70,9 @@
 
 			vm.index++;
 
-			if (vm.index == 7) {
-				vm.index = 0;
+			if (vm.index == 31) {
+				$('.finished').show();
+				$('.test').hide();
 			}
 
 			vm.displayNextQuestion();
@@ -83,6 +83,10 @@
 			var percentage = 100;
 
 			timerService.interval(100, function() {
+				$('body').bind('beforeunload',function(){
+					clearInterval(this);
+				});
+
 				value += 100;
 
 				if (value == vm.timeLimit) {
