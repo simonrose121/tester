@@ -54,49 +54,49 @@
 				{
 					"Id": 8,
 					"Type": "odd",
-					"Answers": 4,
+					"Answers": 2,
 					"CorrectAnswer": 1
 				},
 				{
 					"Id": 9,
 					"Type": "odd",
-					"Answers": 4,
+					"Answers": 2,
 					"CorrectAnswer": 1
 				},
 				{
 					"Id": 10,
 					"Type": "odd",
-					"Answers": 4,
+					"Answers": 2,
 					"CorrectAnswer": 1
 				},
 				{
 					"Id": 11,
 					"Type": "odd",
-					"Answers": 4,
+					"Answers": 2,
 					"CorrectAnswer": 1
 				},
 				{
 					"Id": 12,
 					"Type": "odd",
-					"Answers": 4,
+					"Answers": 2,
 					"CorrectAnswer": 1
 				},
 				{
 					"Id": 13,
 					"Type": "odd",
-					"Answers": 4,
+					"Answers": 2,
 					"CorrectAnswer": 1
 				},
 				{
 					"Id": 14,
 					"Type": "odd",
-					"Answers": 4,
+					"Answers": 2,
 					"CorrectAnswer": 1
 				},
 				{
 					"Id": 15,
 					"Type": "odd",
-					"Answers": 4,
+					"Answers": 2,
 					"CorrectAnswer": 1
 				},
 				{

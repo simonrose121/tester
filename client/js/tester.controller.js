@@ -14,8 +14,8 @@
 		vm.currentQuestion = null;
 		vm.answers = [];
 		vm.question = "";
-		vm.index = 0;
-		vm.userId = null;
+		vm.index = 8;
+		vm.userId = 1;
 		vm.userIdField = null;
 		vm.finished = null;
 		vm.timeLimit = 300000; // 5 minutes
@@ -37,6 +37,12 @@
 
 			for (var i = 1; i <= vm.currentQuestion.Answers; i++) {
 				vm.answers.push(i);
+			}
+
+			if (vm.currentQuestion.Type == "odd") {
+				// push 2 more of the wrong answer
+				vm.answers.push(2);
+				vm.answers.push(2);
 			}
 
 			shuffle(vm.answers);

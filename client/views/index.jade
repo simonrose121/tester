@@ -21,12 +21,12 @@ html(lang='en' ng-app='tester')
                     .container
                         .col-md-8.col-md-offset-2
                             h1 {{ vm.question }}
-                            .image
+                            .image(ng-if="vm.currentQuestion.Type != 'odd'")
                                 img(ng-src='img/q{{vm.currentQuestion.Id}}.png')
                 .row#answers
                     .container
                         .col-md-8.col-md-offset-2
-                            ul(ng-repeat='answer in vm.answers')
+                            ul(ng-repeat='answer in vm.answers track by $index')
                                 .col-md-6
                                     li
                                         img(class='answer' 
