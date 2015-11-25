@@ -11,17 +11,20 @@
 
 		var vm = this;
 
-		vm.currentQuestion = null;
+		/* variables available to view */
 		vm.answers = [];
-		vm.question = "";
+		vm.currentQuestion = null;
+		vm.finished = null;
 		vm.index = 0;
+		vm.limit = 31;
+		vm.progressBar = null;
+		vm.question = "";
+		vm.timeLimit = 300000; // 5 minutes
 		vm.userId = null;
 		vm.userIdField = null;
-		vm.finished = null;
-		vm.timeLimit = 300000; // 5 minutes
-		vm.progressBar = null;
-		vm.limit = 31;
 
+		/* public methods */
+		vm.displayFinishedMessage = displayFinishedMessage;
 		vm.displayNextQuestion = displayNextQuestion;
 		vm.progressBar = progressBar;
 		vm.register = register;
@@ -51,6 +54,11 @@
 			vm.question = questions.types[vm.currentQuestion.Type];
 		}
 
+		function displayFinishedMessage() {
+			$('.finished').show();
+			$('.test').hide();
+		}
+
 		function progressBar() {
 			vm.progressBar = ngProgressFactory.createInstance();
 			vm.progressBar.setColor('#FFFFFF');
@@ -67,8 +75,6 @@
 		function selectAnswer(answer) {
 			var correct = false;
 
-			console.log(vm.index);
-
 			if (answer === vm.currentQuestion.CorrectAnswer) {
 				correct = true;
 			}
@@ -78,8 +84,7 @@
 			vm.index++;
 
 			if (vm.index == vm.limit) {
-				$('.finished').show();
-				$('.test').hide();
+				vm.displayFinishedMessage();
 			}
 
 			vm.displayNextQuestion();
@@ -98,8 +103,7 @@
 
 				if (value == vm.timeLimit) {
 					clearInterval(this);
-					$('.finished').show();
-					$('.test').hide();
+					vm.displayFinishedMessage();
 					vm.progressBar.complete();
 					vm.progressBar.reset();
 				} else {
