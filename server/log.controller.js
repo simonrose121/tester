@@ -12,7 +12,8 @@ LogController.prototype = {
 			user_id: req.body.userId,
 			question: req.body.questionId,
 			answer: req.body.answerId,
-			correct: req.body.correct
+			correct: req.body.correct,
+            date: new Date()
 		};
 
 		console.log(entry);
@@ -25,9 +26,11 @@ LogController.prototype = {
 
 				console.log(entry);
 
-				return entry;
+				res.json(entry);
 			});
-		}
+		} else {
+            res.json(entry);
+        }
     },
 };
 

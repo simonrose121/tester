@@ -14,12 +14,13 @@
 		vm.currentQuestion = null;
 		vm.answers = [];
 		vm.question = "";
-		vm.index = 8;
-		vm.userId = 1;
+		vm.index = 0;
+		vm.userId = null;
 		vm.userIdField = null;
 		vm.finished = null;
 		vm.timeLimit = 300000; // 5 minutes
 		vm.progressBar = null;
+		vm.limit = 31;
 
 		vm.displayNextQuestion = displayNextQuestion;
 		vm.progressBar = progressBar;
@@ -72,11 +73,11 @@
 				correct = true;
 			}
 
-			//logService.postAnswer(vm.userId, vm.currentQuestion.Id, answer, correct);
+			logService.postAnswer(vm.userId, vm.currentQuestion.Id, answer, correct);
 
 			vm.index++;
 
-			if (vm.index == 31) {
+			if (vm.index == vm.limit) {
 				$('.finished').show();
 				$('.test').hide();
 			}
