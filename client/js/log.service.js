@@ -21,7 +21,8 @@
 				userId: userId,
 				questionId: question,
 				answerId: answer,
-				correct: correct
+				correct: correct,
+				timestamp: new Date()
 			};
 
 			postLog(log);
@@ -30,6 +31,7 @@
 		/* private methods */
 
 		function postLog(log) {
+			console.log(log);
 			$http.post(vm.baseUrl, log).success(function(data) {
 				return data;
 			}).error(function(data) {
