@@ -23,6 +23,10 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+#message {
+  color: #ff3434;
+  margin-top: 10px;
+}
 #question {
   background: #00BCD4;
   text-align: center;

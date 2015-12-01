@@ -32,6 +32,31 @@ LogController.prototype = {
             res.json(entry);
         }
     },
+
+    checkId: function (req, res) {
+        var self = this;
+
+        var querySpec = {
+            query: 'SELECT * FROM root r WHERE r.user_id=@userId',
+            parameters: [{
+                name: '@userId',
+                value: req.body.userId
+            }]
+        };
+
+        self.logDao.find(querySpec, function (err, docs) {
+            if (err) {
+                throw (err);
+            }
+
+            if (docs.length > 0) {
+                res.json(true);
+            } else {
+                res.json(false);
+            }
+        });
+    },
+
 };
 
 module.exports = LogController;

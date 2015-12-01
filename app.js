@@ -36,6 +36,7 @@ logDAO.init();
 
 // api routes
 app.post('/answer/', logController.addLog.bind(logController));
+app.post('/checkId/', logController.checkId.bind(logController));
 
 app.listen(port);
 
