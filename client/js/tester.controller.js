@@ -68,14 +68,20 @@
 		function register() {
 			if (isNormalInteger(vm.userIdField)) {
 				var sanitized = $sanitize(vm.userIdField);
-				var checkId = logService.getIdCheck(sanitized, function(exists) {
-					if (!exists) {
-						vm.userId = sanitized;
-						vm.message = '';
-					} else {
-						vm.message = 'Id already exists in database';
-					}
-				});
+				if (sanitized) {
+					var checkId = logService.getIdCheck(sanitized, function(exists) {
+						if (!exists) {
+							vm.userId = sanitized;
+							vm.message = '';
+						} else {
+							vm.message = 'Id already exists in database';
+						}
+					});
+				} else {
+					vm.message = 'Input not valid';
+				}
+			} else {
+				vm.message = 'Input not valid';
 			}
 		}
 
