@@ -9,6 +9,7 @@
 				"sequence": "What comes next?"
 			},
 			"questions": [
+				// Odd
 				{
 					"pictureId": 8,
 					"type": "odd",
@@ -57,6 +58,19 @@
 					"answers": 2,
 					"correct": 1
 				},
+				{
+					"pictureId": 35,
+					"type": "odd",
+					"answers": 2,
+					"correct": 1
+				},
+				{
+					"pictureId": 36,
+					"type": "odd",
+					"answers": 2,
+					"correct": 1
+				},
+				// Match
 				{
 					"pictureId": 1,
 					"type": "match",

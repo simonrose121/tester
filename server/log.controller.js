@@ -45,17 +45,21 @@ LogController.prototype = {
             }]
         };
 
-        self.logDao.find(querySpec, function (err, docs) {
-            if (err) {
-                throw (err);
-            }
+        if (config.store) {
+            self.logDao.find(querySpec, function (err, docs) {
+                if (err) {
+                    throw (err);
+                }
 
-            if (docs.length > 0) {
-                res.json(true);
-            } else {
-                res.json(false);
-            }
-        });
+                if (docs.length > 0) {
+                    res.json(true);
+                } else {
+                    res.json(false);
+                }
+            });
+        } else {
+            res.json(false);
+        }
     },
 
 };
