@@ -3,10 +3,10 @@
 		.module('tester')
 		.constant('questions', {
 			"types": {
-				"match": "Match one of the shapes below with this shape",
+				"match": "Which shape is the same as this one?",
 				"odd": "Which is the odd one out?",
 				"missing": "Fill in the blank space",
-				"sequence": "What is the next one?"
+				"sequence": "What comes next?"
 			},
 			"questions": [
 				{
