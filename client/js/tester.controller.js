@@ -15,8 +15,8 @@
 		vm.answers = [];
 		vm.current = null;
 		vm.finished = null;
-		vm.index = 10;
-		vm.limit = 34;
+		vm.index = 20;
+		vm.limit = 38;
 		vm.progressBar = null;
 		vm.question = "";
 		vm.timeLimit = 300000; // 5 minutes
