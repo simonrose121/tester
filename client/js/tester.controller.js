@@ -15,12 +15,12 @@
 		vm.answers = [];
 		vm.current = null;
 		vm.finished = null;
-		vm.index = 0;
+		vm.index = 10;
 		vm.limit = 34;
 		vm.progressBar = null;
 		vm.question = "";
 		vm.timeLimit = 300000; // 5 minutes
-		vm.userId = null;
+		vm.userId = 1;
 		vm.userIdField = null;
 
 		/* public methods */
