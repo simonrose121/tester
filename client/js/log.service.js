@@ -26,9 +26,10 @@
 			getIdExists(req, callback);
 		}
 
-		function postAnswer(userId, question, answer, correct) {
+		function postAnswer(userId, number, question, answer, correct) {
 			var log = {
 				userId: userId,
+				number: number,
 				questionId: question,
 				answerId: answer,
 				correct: correct,

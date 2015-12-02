@@ -13,7 +13,7 @@
 
 		/* variables available to view */
 		vm.answers = [];
-		vm.currentQuestion = null;
+		vm.current = null;
 		vm.finished = null;
 		vm.index = 0;
 		vm.limit = 34;
@@ -37,13 +37,13 @@
 			vm.question = "";
 
 			// get next question in array
-			vm.currentQuestion = questions.questions[vm.index];
+			vm.current = questions.questions[vm.index];
 
-			for (var i = 1; i <= vm.currentQuestion.Answers; i++) {
+			for (var i = 1; i <= vm.current.answers; i++) {
 				vm.answers.push(i);
 			}
 
-			if (vm.currentQuestion.Type == "odd") {
+			if (vm.current.type == "odd") {
 				// push 2 more of the wrong answer
 				vm.answers.push(2);
 				vm.answers.push(2);
@@ -51,7 +51,7 @@
 
 			shuffle(vm.answers);
 
-			vm.question = questions.types[vm.currentQuestion.Type];
+			vm.question = questions.types[vm.current.type];
 		}
 
 		function displayFinishedMessage() {
@@ -88,11 +88,11 @@
 		function selectAnswer(answer) {
 			var correct = false;
 
-			if (answer === vm.currentQuestion.CorrectAnswer) {
+			if (answer === vm.current.correct) {
 				correct = true;
 			}
 
-			logService.postAnswer(vm.userId, vm.currentQuestion.Id, answer, correct);
+			logService.postAnswer(vm.userId, vm.index, vm.current.pictureId, answer, correct);
 
 			vm.index++;
 

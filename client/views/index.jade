@@ -21,8 +21,8 @@ html(lang='en' ng-app='tester')
                     .container
                         .col-md-8.col-md-offset-2
                             h1 {{ vm.question }}
-                            .image(ng-if="vm.currentQuestion.Type != 'odd'")
-                                img(ng-src='img/compressed/q{{vm.currentQuestion.Id}}.png'
+                            .image(ng-if="vm.current.type != 'odd'")
+                                img(ng-src='img/compressed/q{{vm.current.pictureId}}.png'
                                     draggable='false')
                 .row#answers
                     .container
@@ -31,7 +31,7 @@ html(lang='en' ng-app='tester')
                                 .col-md-6
                                     li
                                         img(class='answer' 
-                                            ng-src='img/compressed/q{{vm.currentQuestion.Id}}a{{answer}}.png' 
+                                            ng-src='img/compressed/q{{vm.current.pictureId}}a{{answer}}.png' 
                                             ng-click='vm.selectAnswer(answer)'
                                             draggable='false')
         .content(ng-if='!vm.userId')

@@ -10,6 +10,7 @@ LogController.prototype = {
         var self = this;
 		var entry = {
 			user_id: req.body.userId,
+            number: req.body.number,
 			question: req.body.questionId,
 			answer: req.body.answerId,
 			correct: req.body.correct,
