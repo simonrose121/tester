@@ -168,10 +168,10 @@
 				},
 				// 3
 				{
-					"pictureId": 18,
+					"pictureId": 21,
 					"type": "missing",
 					"answers": 3,
-					"correct": 2
+					"correct": 1
 				},
 				// 4
 				{
@@ -189,10 +189,10 @@
 				},
 				// 6
 				{
-					"pictureId": 21,
+					"pictureId": 18,
 					"type": "missing",
 					"answers": 3,
-					"correct": 1
+					"correct": 2
 				},
 				// 7
 				{
