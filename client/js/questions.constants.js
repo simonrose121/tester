@@ -6,7 +6,7 @@
 				"match": "Which shape is the same as this one?",
 				"odd": "Which is the odd one out?",
 				"missing": "Fill in the blank space",
-				"sequence": "What comes next in the sequence?"
+				"sequence": "What comes next?"
 			},
 			"questions": [
 				// Odd
@@ -278,6 +278,20 @@
 					"type": "sequence",
 					"answers": 3,
 					"correct": 3
+				},
+				// 9
+				{
+					"pictureId": 39,
+					"type": "sequence",
+					"answers": 4,
+					"correct": 2
+				},
+				// 10
+				{
+					"pictureId": 40,
+					"type": "sequence",
+					"answers": 4,
+					"correct": 1
 				},
 			]
 		});

@@ -16,10 +16,10 @@
 		vm.current = null;
 		vm.finished = null;
 		vm.index = 0;
-		vm.limit = 38;
+		vm.limit = 40;
 		vm.progressBar = null;
 		vm.question = "";
-		vm.timeLimit = 300000; // 5 minutes
+		vm.timeLimit = 180000; // 3 minutes
 		vm.userId = 1;
 		vm.userIdField = null;
 
