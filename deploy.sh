@@ -119,7 +119,7 @@ fi
 
 # 4. Install bower packages
 if [ -e "$DEPLOYMENT_SOURCE/bower.json" ]; then
-  eval $NPM_CMD install bower
+  eval sudo install bower --allow-root
   exitWithMessageOnError "installing bower failed"
   ./node_modules/.bin/bower install
   exitWithMessageOnError "bower failed"
