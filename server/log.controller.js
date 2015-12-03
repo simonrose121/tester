@@ -14,6 +14,7 @@ LogController.prototype = {
 			question: req.body.questionId,
 			answer: req.body.answerId,
 			correct: req.body.correct,
+            type: req.body.type,
             date: new Date()
 		};
 

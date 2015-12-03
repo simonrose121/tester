@@ -23,9 +23,27 @@
 				for (var i = 0; i < vm.userIds.length; i++) {
 					var userId = vm.userIds[i];
 					var score = getScore(userId);
-					vm.scores.push({"userId":userId, "score": score});
+					var answers = getAnswers(userId);
+					vm.scores.push({
+						"userId": userId,
+						"score": score,
+						"answers": answers
+					});
 				}
 			});
+		}
+
+		function getAnswers(userId) {
+			var answers = [];
+
+			for (var i = 0; i < vm.data.length; i++) {
+				var item = vm.data[i];
+				if (item.user_id === userId) {
+					answers.push(item);
+				}
+			}
+
+			return answers;
 		}
 
 		function getScore(userId) {
