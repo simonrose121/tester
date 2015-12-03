@@ -1,7 +1,8 @@
 doctype html
-html(lang='en' ng-app='testerAdmin')
+html(lang='en' ng-app='testerAdmin' style='overflow: auto')
 	head
 		title="tester - Admin"
 		include header.jade
 	body(ng-controller='TesterAdmin as vm')
-		p {{vm.data}}
+		ul(ng-repeat='item in vm.scores')
+			li {{item.userId}} {{item.score}}/40

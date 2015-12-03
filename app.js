@@ -41,7 +41,8 @@ logDAO.init();
 // api routes
 app.post('/answer/', logController.addLog.bind(logController));
 app.post('/checkId/', logController.checkId.bind(logController));
-app.get('/getAnswers/', logController.getData.bind(logController));
+app.get('/getAnswers/', logController.getAll.bind(logController));
+app.get('/getAnswersById/', logController.getById.bind(logController));
 
 app.listen(port);
 
