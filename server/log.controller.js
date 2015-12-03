@@ -14,6 +14,7 @@ LogController.prototype = {
 			question: req.body.questionId,
 			answer: req.body.answerId,
 			correct: req.body.correct,
+            type: req.body.type,
             date: new Date()
 		};
 
@@ -62,6 +63,51 @@ LogController.prototype = {
         }
     },
 
+    getAll: function (req, res) {
+        var self = this;
+
+        var querySpec = {
+            query: 'SELECT * FROM root'
+        };
+
+        self.logDao.find(querySpec, function (err, docs) {
+            if (err) {
+                throw (err);
+            }
+
+            if (docs.length > 0) {
+                res.send(docs);
+            } else {
+                res.send(false);
+            }
+        });
+    },
+
+    getById: function(req, res) {
+        var self = this;
+
+        console.log(req.body);
+
+        var querySpec = {
+            query: 'SELECT * FROM root r WHERE r.user_id=@userId',
+            parameters: [{
+                name: '@userId',
+                value: req.body.userId
+            }]
+        };
+
+        self.logDao.find(querySpec, function (err, docs) {
+            if (err) {
+                throw (err);
+            }
+
+            if (docs !== null) {
+                res.json(docs);
+            }
+
+            res.send('Doc not found');
+        });
+    }
 };
 
 module.exports = LogController;
