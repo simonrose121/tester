@@ -92,7 +92,7 @@
 				correct = true;
 			}
 
-			logService.postAnswer(vm.userId, vm.index, vm.current.pictureId, answer, correct);
+			logService.postAnswer(vm.userId, vm.index, vm.current.pictureId, answer, correct, vm.current.type);
 
 			vm.index++;
 
