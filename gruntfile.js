@@ -6,12 +6,12 @@ module.exports = function(grunt) {
           paths: ["client/assets/css"]
         },
           files: {
-            "client/css/styles.css": "client/css/styles.less"
+            "client/assets/css/styles.css": "client/assets/css/styles.less"
           }
         }
       },
       watch: {
-        files: "client/css/*",
+        files: "client/assets/css/*",
         tasks: ["less"]
       }
    });

@@ -30,6 +30,10 @@
 						"answers": answers
 					});
 				}
+
+				$('.table').click(function() {
+					console.log(this.find('table'));
+				});
 			});
 		}
 
