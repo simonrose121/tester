@@ -62,6 +62,25 @@ LogController.prototype = {
         }
     },
 
+    getData: function (req, res) {
+        var self = this;
+
+        var querySpec = {
+            query: 'SELECT * FROM root'
+        };
+
+        self.logDao.find(querySpec, function (err, docs) {
+            if (err) {
+                throw (err);
+            }
+
+            if (docs.length > 0) {
+                res.send(docs);
+            } else {
+                res.send(false);
+            }
+        });
+    }
 };
 
 module.exports = LogController;

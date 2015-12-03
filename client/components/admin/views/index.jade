@@ -1,0 +1,7 @@
+doctype html
+html(lang='en' ng-app='testerAdmin')
+	head
+		title="tester - Admin"
+		include header.jade
+	body(ng-controller='TesterAdmin as vm')
+		p {{vm.data}}
