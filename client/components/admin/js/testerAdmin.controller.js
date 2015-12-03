@@ -27,13 +27,10 @@
 					vm.scores.push({
 						"userId": userId,
 						"score": score,
-						"answers": answers
+						"answers": answers,
+						"show": false
 					});
 				}
-
-				$('.table').click(function() {
-					console.log(this.find('table'));
-				});
 			});
 		}
 

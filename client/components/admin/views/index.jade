@@ -9,12 +9,11 @@ html(lang='en' ng-app='testerAdmin' style='overflow: auto')
 				.col-md-8.col-md-offset-2
 					#answers
 						ul(ng-repeat='item in vm.scores')
-							table(class='table user' style='margin-bottom:0; border-bottom: solid thin #000')
+							table(class='table' style='margin-bottom:0; border-bottom: solid thin #000')
 								tbody
 									tr
-										td UserId: {{item.userId}}
-										td Score: {{item.score}}/40
-								table(class='table' style='display:none;')
+										td UserId: {{item.userId}} <br/> Score: {{item.score}}/40
+								table(class='table')
 									thead
 										tr
 											th Type
