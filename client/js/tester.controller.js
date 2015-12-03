@@ -15,7 +15,7 @@
 		vm.answers = [];
 		vm.current = null;
 		vm.finished = null;
-		vm.index = 20;
+		vm.index = 0;
 		vm.limit = 38;
 		vm.progressBar = null;
 		vm.question = "";
