@@ -20,7 +20,7 @@
 		vm.progressBar = null;
 		vm.question = "";
 		vm.timeLimit = 180000; // 3 minutes
-		vm.userId = 1;
+		vm.userId = null;
 		vm.userIdField = null;
 
 		/* public methods */
