@@ -10,6 +10,7 @@ LogController.prototype = {
         var self = this;
 		var entry = {
 			user_id: req.body.userId,
+            number: req.body.number,
 			question: req.body.questionId,
 			answer: req.body.answerId,
 			correct: req.body.correct,
@@ -32,6 +33,35 @@ LogController.prototype = {
             res.json(entry);
         }
     },
+
+    checkId: function (req, res) {
+        var self = this;
+
+        var querySpec = {
+            query: 'SELECT * FROM root r WHERE r.user_id=@userId',
+            parameters: [{
+                name: '@userId',
+                value: req.body.userId
+            }]
+        };
+
+        if (config.store) {
+            self.logDao.find(querySpec, function (err, docs) {
+                if (err) {
+                    throw (err);
+                }
+
+                if (docs.length > 0) {
+                    res.json(true);
+                } else {
+                    res.json(false);
+                }
+            });
+        } else {
+            res.json(false);
+        }
+    },
+
 };
 
 module.exports = LogController;

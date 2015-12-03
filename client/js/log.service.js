@@ -8,20 +8,32 @@
 	function logService($http) {
 		var vm = this;
 
-		vm.baseUrl = '/answer/';
+		vm.postAnswerUrl = '/answer/';
+		vm.getIdCheckUrl = '/checkId/';
 
 		var service = {
+			getIdCheck: getIdCheck,
 			postAnswer: postAnswer
 		};
 
 		return service;
 
-		function postAnswer(userId, question, answer, correct) {
+		function getIdCheck(id, callback) {
+			var req = {
+				userId: id
+			};
+
+			getIdExists(req, callback);
+		}
+
+		function postAnswer(userId, number, question, answer, correct) {
 			var log = {
 				userId: userId,
+				number: number,
 				questionId: question,
 				answerId: answer,
-				correct: correct
+				correct: correct,
+				timestamp: new Date()
 			};
 
 			postLog(log);
@@ -29,8 +41,17 @@
 
 		/* private methods */
 
+		function getIdExists(id, callback) {
+			$http.post(vm.getIdCheckUrl, id).success(function(exists) {
+				callback(exists);
+			}).error(function(err) {
+				throw err;
+			});
+		}
+
 		function postLog(log) {
-			$http.post(vm.baseUrl, log).success(function(data) {
+			console.log(log);
+			$http.post(vm.postAnswerUrl, log).success(function(data) {
 				return data;
 			}).error(function(data) {
 				throw data;
