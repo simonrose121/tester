@@ -11,6 +11,8 @@ html(lang='en' ng-app='tester')
         .content(ng-if='vm.finished == false && vm.userId')
             .finished(style='display: none;')
                 .row#finished
+                    .id
+                        h3(ng-bind='vm.userId')
                     .container
                         .col-md-4.col-md-offset-4
                             h1 Time is up, well done!

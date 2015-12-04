@@ -27,17 +27,17 @@ body {
   color: #ff3434;
   margin-top: 10px;
 }
+.id {
+  position: absolute;
+  top: 0;
+  left: 10px;
+}
 #question {
   background: #00BCD4;
   text-align: center;
   color: #FFF;
   padding: 20px 0;
   box-shadow: 10px 10px 22px -12px rgba(0, 0, 0, 0.75);
-}
-#question .id {
-  position: absolute;
-  top: 0;
-  left: 10px;
 }
 #question .image img {
   margin: 30px 0 20px;
