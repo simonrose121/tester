@@ -19,6 +19,7 @@
 		function getData() {
 			dataService.getAnswers(function(data) {
 				vm.userIds = getDistinct(data);
+				vm.userIds.sort(sortNumber);
 				vm.data = data;
 				for (var i = 0; i < vm.userIds.length; i++) {
 					var userId = vm.userIds[i];
@@ -52,7 +53,7 @@
 
 			for (var i = 0; i < vm.data.length; i++) {
 				var item = vm.data[i];
-				if (item.user_id === userId) {
+				if (parseInt(item.user_id) === userId) {
 					// got data here
 					if (item.correct === true) {
 						score++;
@@ -68,11 +69,15 @@
 			var distinct = [];
 			for (var i in array) {
 			 	if (typeof(unique[array[i].user_id]) == "undefined") {
-			  		distinct.push(array[i].user_id);
+			  		distinct.push(parseInt(array[i].user_id));
 			 	}
 			 	unique[array[i].user_id] = 0;
 			}
 			return distinct;
+		}
+
+		function sortNumber(a, b) {
+			return a - b;
 		}
 	}
 })();
