@@ -28,8 +28,7 @@
 					vm.scores.push({
 						"userId": userId,
 						"score": score,
-						"answers": answers,
-						"show": false
+						"answers": answers
 					});
 				}
 			});
