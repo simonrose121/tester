@@ -12,7 +12,7 @@ html(lang='en' ng-app='testerAdmin' style='overflow: auto')
 							table(class='table' style='margin-bottom:0;')
 								tbody
 									tr
-										td UserId: {{item.userId}} <br/> Score: {{item.score}}/40
+										td UserId: {{item.userId}} <br/> Score: {{item.score}}/{{item.total}} {{$index}}
 								//- table(class='table')
 								//- 	thead
 								//- 		tr

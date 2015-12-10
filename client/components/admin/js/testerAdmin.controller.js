@@ -27,7 +27,8 @@
 					var answers = getAnswers(userId);
 					vm.scores.push({
 						"userId": userId,
-						"score": score,
+						"score": score.score,
+						"total": score.total,
 						"answers": answers
 					});
 				}
@@ -49,6 +50,7 @@
 
 		function getScore(userId) {
 			var score = 0;
+			var total = 0;
 
 			for (var i = 0; i < vm.data.length; i++) {
 				var item = vm.data[i];
@@ -57,10 +59,14 @@
 					if (item.correct === true) {
 						score++;
 					}
+					total++;
 				}
 			}
 
-			return score;
+			return {
+				score: score,
+				total: total
+			};
 		}
 
 		function getDistinct(array) {
