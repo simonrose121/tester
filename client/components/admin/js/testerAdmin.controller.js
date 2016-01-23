@@ -5,6 +5,11 @@
 
 	TesterAdmin.$Inject = ['dataService'];
 
+	/**
+	 * Controls application logic and communicates with view directly.
+	 *
+	 * @param dataService
+	 */
 	function TesterAdmin(dataService) {
 		var vm = this;
 
@@ -12,10 +17,14 @@
 		vm.scores = [];
 		vm.data = null;
 
+		// function hoisting
 		vm.getData = getData;
-
 		vm.getData();
 
+		/**
+		 * Get data from all answers
+		 *
+		 */
 		function getData() {
 			dataService.getAnswers(function(data) {
 				vm.userIds = getDistinct(data);
@@ -35,6 +44,12 @@
 			});
 		}
 
+		/**
+		 * Get all answers for a user
+		 *
+		 * @param userId {number} - UserId
+		 * @return {object} - Array of answers
+		 */
 		function getAnswers(userId) {
 			var answers = [];
 
@@ -48,6 +63,12 @@
 			return answers;
 		}
 
+		/**
+		 * Get overall score for a user
+		 *
+		 * @param userId {number} - UserId
+		 * @returns {object} - Score and total questions answered
+		 */
 		function getScore(userId) {
 			var score = 0;
 			var total = 0;
@@ -69,6 +90,12 @@
 			};
 		}
 
+		/**
+		 * Get distinct userIds from data
+		 *
+		 * @param array {object} - Array of all answers
+		 * @returns {object} - Distinct array of userIDs
+		 */
 		function getDistinct(array) {
 			var unique = {};
 			var distinct = [];
@@ -81,6 +108,13 @@
 			return distinct;
 		}
 
+		/**
+		 * Sort two numbers
+		 *
+		 * @param a {number} - First number
+		 * @param b {number} - Second number
+		 * @returns {number}
+		 */
 		function sortNumber(a, b) {
 			return a - b;
 		}

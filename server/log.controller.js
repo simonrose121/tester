@@ -5,6 +5,7 @@ function LogController(logDao) {
   	this.logDao = logDao;
 }
 
+// Log access methods
 LogController.prototype = {
     addLog: function (req, res) {
         var self = this;

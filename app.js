@@ -29,20 +29,20 @@ app.use('/libs', express.static(__dirname + '/client/assets/libs'));
 app.use('/css', express.static(__dirname + '/client/assets/css'));
 app.use('/img', express.static(__dirname + '/client/assets/img'));
 app.use('/client', express.static(__dirname + '/client/'));
-
-// database
-var docDbClient = new DocumentDBClient(config.host, {
-    masterKey: config.authKey
-});
-var logDAO = new LogDAO(docDbClient, config.databaseId, config.collectionId);
-var logController = new LogController(logDAO);
-logDAO.init();
+//
+// // database
+// var docDbClient = new DocumentDBClient(config.host, {
+//     masterKey: config.authKey
+// });
+// var logDAO = new LogDAO(docDbClient, config.databaseId, config.collectionId);
+// var logController = new LogController(logDAO);
+// logDAO.init();
 
 // api routes
-app.post('/answer/', logController.addLog.bind(logController));
-app.post('/checkId/', logController.checkId.bind(logController));
-app.get('/getAnswers/', logController.getAll.bind(logController));
-app.get('/getAnswersById/', logController.getById.bind(logController));
+// app.post('/answer/', logController.addLog.bind(logController));
+// app.post('/checkId/', logController.checkId.bind(logController));
+// app.get('/getAnswers/', logController.getAll.bind(logController));
+// app.get('/getAnswersById/', logController.getById.bind(logController));
 
 app.listen(port);
 
